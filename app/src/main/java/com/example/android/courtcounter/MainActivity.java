@@ -11,6 +11,10 @@ public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
     int scoreTeamB = 0;
+    int yelowCardsA = 0;
+    int yelowCardsB = 0;
+    int redCardsA = 0;
+    int redCardsB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +52,78 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
     }
 
-    /**
-     * Increase the score for Team A by 2 points.
-     */
-    public void addTwoForTeamA(View v) {
-        scoreTeamA = scoreTeamA + 2;
-        displayForTeamA(scoreTeamA);
-    }
 
     /**
-     * Increase the score for Team A by 3 points.
+     * Increase yellow cards for team A
      */
-    public void addThreeForTeamA(View v) {
-        scoreTeamA = scoreTeamA + 3;
-        displayForTeamA(scoreTeamA);
+    public void yelowCardA(View v) {
+        yelowCardsA = yelowCardsA + 1;
+        displayYelowCardA(yelowCardsA);
     }
+
+
+    /**
+     * Display yellow cards for team A
+     */
+    public void displayYelowCardA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.yelowCardAtext);
+        scoreView.setText(String.valueOf(score));
+    }
+
+
+    /**
+     * Increase red cards for team A
+     */
+    public void redCardA(View v) {
+        redCardsA = redCardsA + 1;
+        displayRedCardA(redCardsA);
+    }
+
+
+    /**
+     * Display red cards for team A
+     */
+    public void displayRedCardA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.redcardAtext);
+        scoreView.setText(String.valueOf(score));
+    }
+
+
+    /**
+     * Increase yellow cards for team B
+     */
+    public void yelowCardB(View v) {
+        yelowCardsB = yelowCardsB + 1;
+        displayYelowCardB(yelowCardsB);
+    }
+
+
+    /**
+     * Display yellow cards for team B
+     */
+    public void displayYelowCardB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.yelowcardBtext);
+        scoreView.setText(String.valueOf(score));
+    }
+
+
+    /**
+     * Increase red cards for team B
+     */
+    public void redCardB(View v) {
+        redCardsB = redCardsB + 1;
+        displayRedCardB(redCardsB);
+    }
+
+
+    /**
+     * Display red cards for team B
+     */
+    public void displayRedCardB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.redcardBtext);
+        scoreView.setText(String.valueOf(score));
+    }
+
 
     /**
      * Displays the given score for Team A.
@@ -81,21 +142,6 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(scoreTeamB);
     }
 
-    /**
-     * Increase the score for Team B by 2 points.
-     */
-    public void addTwoForTeamB(View v) {
-        scoreTeamB = scoreTeamB + 2;
-        displayForTeamB(scoreTeamB);
-    }
-
-    /**
-     * Increase the score for Team B by 3 points.
-     */
-    public void addThreeForTeamB(View v) {
-        scoreTeamB = scoreTeamB + 3;
-        displayForTeamB(scoreTeamB);
-    }
 
     /**
      * Displays the given score for Team B.
@@ -108,10 +154,74 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Resets scored points for both teams
      */
-    public void resetScore(View v){
-        scoreTeamA=0;
-        scoreTeamB=0;
+    public void resetScore(View v) {
+        scoreTeamA = 0;
+        scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
-}
+    }
+
+    /**
+     * Yellow cards reset for team A
+     */
+    public void resetYelowCardsA(View v) {
+        yelowCardsA = 0;
+        displayYelowCardA(yelowCardsA);
+
+    }
+
+
+    /**
+     * Red cards reset for team A
+     */
+    public void resetRedCardsA(View v) {
+        redCardsA = 0;
+        displayRedCardA(redCardsA);
+
+    }
+
+    /**
+     * Yellow cards reset for team B
+     */
+    public void resetYelowCardsB(View v) {
+        yelowCardsB = 0;
+        displayYelowCardB(yelowCardsB);
+
+    }
+
+
+    /**
+     * Red cards reset for team B
+     */
+    public void resetRedCardsB(View v) {
+        redCardsB = 0;
+        displayRedCardB(redCardsB);
+
+    }
+
+
+    /**
+     * Reset score for team A
+     */
+    public void resetScoreA(View v) {
+        scoreTeamA = 0;
+
+        displayForTeamA(scoreTeamA);
+
+
+    }
+
+
+    /**
+     * Reset scores for team B
+     */
+    public void resetScoreB(View v) {
+        scoreTeamB = 0;
+
+        displayForTeamB(scoreTeamB);
+
+
+    }
+
+
 }
